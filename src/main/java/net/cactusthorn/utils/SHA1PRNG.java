@@ -16,6 +16,10 @@ import java.security.SecureRandom;
 import javax.xml.bind.DatatypeConverter;
 
 public class SHA1PRNG {
+	
+	private SHA1PRNG() {
+		throw new UnsupportedOperationException("No chance to instantiate me.");
+	}
 
 	public static byte[] generate(int size) throws NoSuchAlgorithmException {
 
