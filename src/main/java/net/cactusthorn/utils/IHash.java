@@ -16,11 +16,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 public interface IHash {
 
-	static byte[] from(final Path path, final MessageDigest md) throws IOException, NoSuchAlgorithmException {
+	static byte[] from(final Path path, final MessageDigest md) throws IOException {
 
 		try (	InputStream is = Files.newInputStream(path);
 				DigestInputStream dis = new DigestInputStream(is, md ) ) {

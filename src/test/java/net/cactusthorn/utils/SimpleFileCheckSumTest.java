@@ -13,30 +13,18 @@ package net.cactusthorn.utils;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class CRC32Test {
+public class SimpleFileCheckSumTest {
 
-	String testStr = "sdvnlkhv 3949 8585___djf5885";
-	
 	@Test
-	public void testString() {
-		
-		assertEquals("3DDA0435", CRC32.asHEXFrom(testStr));
-		
-		assertEquals("3DDA0435", CRC32.asHEXFrom(testStr, UTF_8));
-	}
-	
-	@Test
-	public void testFile() throws URISyntaxException, IOException {
+	public void testIt() throws URISyntaxException, IOException  {
 		
 		Path path = Paths.get(getClass().getClassLoader().getResource("1280px-Ritsa.jpg").toURI());
 		
-		assertEquals("95C0C320", CRC32.asHEXFrom(path));
+		assertEquals("95C0C3200000000000045344", SimpleFileCheckSum.asHEXFrom(path));
 	}
 }
