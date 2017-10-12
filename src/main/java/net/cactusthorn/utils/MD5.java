@@ -20,14 +20,14 @@ import java.security.NoSuchAlgorithmException;
 
 import javax.xml.bind.DatatypeConverter;
 
-public class SHA256 implements IHash {
+public class MD5 implements IHash {
 	
-	private SHA256() {
+	private MD5() {
 		throw new UnsupportedOperationException("No chance to instantiate me.");
 	}
 	
 	private static MessageDigest getMessageDigest() throws NoSuchAlgorithmException {
-		return MessageDigest.getInstance("SHA-256" );
+		return MessageDigest.getInstance("MD5" );
 	}
 
 	public static byte[] from(byte[] input) throws NoSuchAlgorithmException {

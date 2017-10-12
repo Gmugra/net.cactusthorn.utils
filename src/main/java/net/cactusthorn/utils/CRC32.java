@@ -20,14 +20,14 @@ import java.security.NoSuchAlgorithmException;
 
 import javax.xml.bind.DatatypeConverter;
 
-public class SHA256 implements IHash {
+public class CRC32 implements IHash {
 	
-	private SHA256() {
+	private CRC32() {
 		throw new UnsupportedOperationException("No chance to instantiate me.");
 	}
 	
 	private static MessageDigest getMessageDigest() throws NoSuchAlgorithmException {
-		return MessageDigest.getInstance("SHA-256" );
+		return new CRC32MessageDigest();
 	}
 
 	public static byte[] from(byte[] input) throws NoSuchAlgorithmException {

@@ -21,16 +21,16 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.NoSuchAlgorithmException;
 
-public class SHA256Test {
+public class SHA1Test {
 
 	String testStr = "sdvnlkhv \u042b 3949 \u00df 8585___djf5885";
 	
 	@Test
 	public void testString() throws NoSuchAlgorithmException {
 		
-		assertEquals("2BD2D0EC881672A29F2848D07C42FF05BA8ECC60BCB46E053492A36BD1004180", SHA256.asHEXFrom(testStr));
+		assertEquals("ABD4F98BD00176209F887A571AAA26CB52C8A58E", SHA1.asHEXFrom(testStr));
 		
-		assertEquals("2BD2D0EC881672A29F2848D07C42FF05BA8ECC60BCB46E053492A36BD1004180", SHA256.asHEXFrom(testStr, UTF_8));
+		assertEquals("ABD4F98BD00176209F887A571AAA26CB52C8A58E", SHA1.asHEXFrom(testStr, UTF_8));
 	}
 	
 	@Test
@@ -38,6 +38,6 @@ public class SHA256Test {
 		
 		Path path = Paths.get(getClass().getClassLoader().getResource("1280px-Ritsa.jpg").toURI());
 		
-		assertEquals("A2B5F6CE3217A4109A2EBE18C6195702DD667CBA0999693D995AB2E167B73C6C", SHA256.asHEXFrom(path));
+		assertEquals("BD3AA10701374BDA33434C9317F0F6ABE32759D8", SHA1.asHEXFrom(path));
 	}
 }
