@@ -8,7 +8,7 @@
  * 
  * http://opensource.org/licenses/BSD-2-Clause
  ******************************************************************************/
-package net.cactusthorn.utils;
+package net.cactusthorn.utils.crc32;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;

@@ -10,21 +10,23 @@
  ******************************************************************************/
 package net.cactusthorn.utils;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+import org.junit.runners.Suite.SuiteClasses;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import net.cactusthorn.utils.security.*;
+import net.cactusthorn.utils.encode.*;
+import net.cactusthorn.utils.crc32.*;
 
-public class SimpleFileCheckSumTest {
-
-	@Test
-	public void testIt() throws URISyntaxException, IOException  {
-		
-		Path path = Paths.get(getClass().getClassLoader().getResource("1280px-Ritsa.jpg").toURI());
-		
-		assertEquals("95C0C3200000000000045344", SimpleFileCheckSum.asHEXFrom(path));
-	}
+@RunWith(Suite.class)
+@SuiteClasses({
+	MD5Test.class,
+	SHA1Test.class,
+	SHA256Test.class,
+	SHA512Test.class,
+	Base58Test.class,
+	CRC32Test.class,
+	SimpleFileCheckSumTest.class
+})
+public class AllTests {
 }

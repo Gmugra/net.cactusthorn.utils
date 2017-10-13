@@ -8,9 +8,12 @@
  * 
  * http://opensource.org/licenses/BSD-2-Clause
  ******************************************************************************/
-package net.cactusthorn.utils;
+package net.cactusthorn.utils.security;
 
 import org.junit.Test;
+
+import net.cactusthorn.utils.security.SHA1;
+
 import static org.junit.Assert.*;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -21,16 +24,16 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.NoSuchAlgorithmException;
 
-public class SHA512Test {
+public class SHA1Test {
 
 	String testStr = "sdvnlkhv \u042b 3949 \u00df 8585___djf5885";
 	
 	@Test
 	public void testString() throws NoSuchAlgorithmException {
 		
-		assertEquals("621A3E6BAA4C08EE1A1980D61888984D968E86335F20591F5340EB8016ECB35B844F196235B76AA14692EDCA6CEEB83B838F1FB45A4A957EE5AD1D42200C1E89", SHA512.asHEXFrom(testStr));
+		assertEquals("ABD4F98BD00176209F887A571AAA26CB52C8A58E", SHA1.asHEXFrom(testStr));
 		
-		assertEquals("621A3E6BAA4C08EE1A1980D61888984D968E86335F20591F5340EB8016ECB35B844F196235B76AA14692EDCA6CEEB83B838F1FB45A4A957EE5AD1D42200C1E89", SHA512.asHEXFrom(testStr, UTF_8));
+		assertEquals("ABD4F98BD00176209F887A571AAA26CB52C8A58E", SHA1.asHEXFrom(testStr, UTF_8));
 	}
 	
 	@Test
@@ -38,6 +41,6 @@ public class SHA512Test {
 		
 		Path path = Paths.get(getClass().getClassLoader().getResource("1280px-Ritsa.jpg").toURI());
 		
-		assertEquals("3B57EE2748B245C01007DEC318D582DF63404B99588F5BB1993E5828E8473637D83360FBFE577ADA24D7E2C8B88C27D4A503F9C34D1BD335DA8CA4D46579D801", SHA512.asHEXFrom(path));
+		assertEquals("BD3AA10701374BDA33434C9317F0F6ABE32759D8", SHA1.asHEXFrom(path));
 	}
 }

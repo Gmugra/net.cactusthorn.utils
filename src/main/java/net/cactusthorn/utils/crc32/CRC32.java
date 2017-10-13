@@ -8,7 +8,7 @@
  * 
  * http://opensource.org/licenses/BSD-2-Clause
  ******************************************************************************/
-package net.cactusthorn.utils;
+package net.cactusthorn.utils.crc32;
 
 import java.nio.charset.Charset;
 import java.nio.file.Path;
@@ -18,6 +18,8 @@ import java.io.IOException;
 import java.security.MessageDigest;
 
 import javax.xml.bind.DatatypeConverter;
+
+import net.cactusthorn.utils.IHash;
 
 public class CRC32 implements IHash {
 	

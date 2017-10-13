@@ -8,7 +8,7 @@
  * 
  * http://opensource.org/licenses/BSD-2-Clause
  ******************************************************************************/
-package net.cactusthorn.utils;
+package net.cactusthorn.utils.security;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;

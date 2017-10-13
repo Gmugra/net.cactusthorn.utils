@@ -8,9 +8,12 @@
  * 
  * http://opensource.org/licenses/BSD-2-Clause
  ******************************************************************************/
-package net.cactusthorn.utils;
+package net.cactusthorn.utils.crc32;
 
 import org.junit.Test;
+
+import net.cactusthorn.utils.crc32.CRC32;
+
 import static org.junit.Assert.*;
 
 import static java.nio.charset.StandardCharsets.UTF_8;

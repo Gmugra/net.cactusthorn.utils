@@ -8,9 +8,10 @@
  * 
  * http://opensource.org/licenses/BSD-2-Clause
  ******************************************************************************/
-package net.cactusthorn.utils;
+package net.cactusthorn.utils.encode;
 
 import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class Base58Test {

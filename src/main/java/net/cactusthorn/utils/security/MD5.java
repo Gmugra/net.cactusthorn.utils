@@ -8,7 +8,7 @@
  * 
  * http://opensource.org/licenses/BSD-2-Clause
  ******************************************************************************/
-package net.cactusthorn.utils;
+package net.cactusthorn.utils.security;
 
 import java.nio.charset.Charset;
 import java.nio.file.Path;
@@ -20,14 +20,16 @@ import java.security.NoSuchAlgorithmException;
 
 import javax.xml.bind.DatatypeConverter;
 
-public class SHA512 implements IHash {
+import net.cactusthorn.utils.IHash;
+
+public class MD5 implements IHash {
 	
-	private SHA512() {
+	private MD5() {
 		throw new UnsupportedOperationException("No chance to instantiate me.");
 	}
 	
 	private static MessageDigest getMessageDigest() throws NoSuchAlgorithmException {
-		return MessageDigest.getInstance("SHA-512" );
+		return MessageDigest.getInstance("MD5" );
 	}
 
 	public static byte[] from(byte[] input) throws NoSuchAlgorithmException {
