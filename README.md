@@ -3,9 +3,9 @@
 One more Java library with trivial static utilities.
 
 ## Checkstyle configuration
-maven goal: checkstyle:check
-Based on "standard" sun_checks.xml:
-1. To comment out:
+1. maven goal: **checkstyle:check**
+2. Based on "standard" **sun_checks.xml**
+3. To comment out:
 ```
 <module name="JavadocMethod"/>
 <module name="JavadocType"/>
@@ -16,7 +16,7 @@ Based on "standard" sun_checks.xml:
 <module name="FinalParameters"/>
 <module name="AvoidInlineConditionals"/>
 ```
-2. To modify:
+4. To modify:
 ```
 <module name="LineLength">
   <property name="max" value="140"/>
@@ -26,7 +26,7 @@ Based on "standard" sun_checks.xml:
   <property name="ignoreSetter" value="true"/>
 </module>
 ```
-3. https://stackoverflow.com/questions/4023185/how-to-disable-a-particular-checkstyle-rule-for-a-particular-line-of-code
+5. https://stackoverflow.com/questions/4023185/how-to-disable-a-particular-checkstyle-rule-for-a-particular-line-of-code
 
 ## License
 Released under the BSD 2-Clause License
