@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  options {
+    timeout(time: 1, unit: 'HOURS')
+  }
   tools {
     maven 'Maven 3.5.3'
   }
@@ -10,6 +13,7 @@ pipeline {
       }
     }
     stage('Checkstyle') {
+      failFast false
       parallel {
         stage('Checkstyle Unix') {
           when {
@@ -30,6 +34,7 @@ pipeline {
       }
     }
     stage('Build') {
+      failFast false
       parallel {
         stage('Build Unix') {
           when {
@@ -50,8 +55,8 @@ pipeline {
       }
     }
   }
-  post { 
-    always { 
+  post {
+    always {
       junit '**/target/surefire-reports/TEST-*.xml'
       archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
     }
