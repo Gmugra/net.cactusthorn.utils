@@ -28,6 +28,28 @@ One more Java library with trivial static utilities.
 ```
 5. https://stackoverflow.com/questions/4023185/how-to-disable-a-particular-checkstyle-rule-for-a-particular-line-of-code
 
+## Jenkins
+Declarative pipeline stage example with SSH (required "SSH Pipeline Steps" Plugin)
+```
+stage('Copy Jar') {
+  steps {
+    withCredentials([sshUserPrivateKey(credentialsId: 'some-cr-id', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'userName')]) {
+      script {
+        def remote = [:]
+        remote.name = "myhost.net"
+        remote.host = "myhost.net"
+        remote.port = 5022
+        remote.allowAnyHosts = true
+        remote.user = userName
+        remote.identity = identity
+
+        sshPut remote: remote, from: 'target/*.jar', into: '.'
+      }
+    }
+  }
+}
+```
+
 ## License
 Released under the BSD 2-Clause License
 ```
